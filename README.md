@@ -109,8 +109,6 @@ Instalar os softwares abaixo:
   $ ./mvnw compile quarkus:dev
 ```
 
-#### Configurando o IntelliJ e Mongodb
-
 ##### Configurando o Mongodb
 
 ```sh
