@@ -97,37 +97,26 @@ Instalar os softwares abaixo:
 ### :arrow_down: **Clonando o repositório**
 
 ```sh
-  $ git clone https://github.com/gustavocarvalhoti/quarkus-luiza-labs.git
+  $ git clone https://github.com/gustavocarvalhoti/quarkus-mongo-hexagonal.git
 ```
 
 <br>
 
 ### :arrow_forward: **Executando a aplicação**
 
-- :package: API
-
 ```sh
-  $ cd quarkus-luiza-labs
-  $ docker-compose up
+  $ cd backend
+  $ ./mvnw compile quarkus:dev
 ```
 
-### :arrow_forward: **Executando a aplicação no modo desenvolvedor**
+#### Configurando o IntelliJ e Mongodb
 
-- :package: API
-
-```sh
-  $ cd quarkus-luiza-labs
-```
-
-#### Configurando no IntelliJ
-
-##### Se você rodou o docker compose antes ele criou o container do MySQL - quarkusluizalabs_mysql-luizalabs_1
+##### Criar o container do Mongodb
 
 ```sh
-  # Verificar
-  $ docker ps -a
-  # Se não possui vc pode rodar o seguinte comando:
-  $ docker run --name quarkusluizalabs_mysql-luizalabs_1 --network host -e MYSQL_ROOT_PASSWORD=root -d gustavocarvalhoti/luizalabs-db:3
+  $ docker pull mongo
+  $ docker run -d -p 27017-27019:27017-27019 --name mongodb mongo   #Criar o banco
+  $ docker exec -it mongodb bash                                    #Entrar no banco
 ```
 
 ##### Apontar para o Java do GraalVM
@@ -151,10 +140,6 @@ Instalar os softwares abaixo:
 ![img_2.png](backend/.github/img_2.png)
 
 <br>
-
-## :memo: License
-
-This project is under the **MIT** license.
 
 ## Como iniciar o projeto
 
@@ -186,3 +171,7 @@ db.user.insert({name: "Gus", age: 34})  <- Cria o banco nesse insert
 db.user.find()                          <- Pesquisa
 show dbs                                <- Verifica os bancos existentes
 ```
+
+## :memo: License
+
+This project is under the **MIT** license.
