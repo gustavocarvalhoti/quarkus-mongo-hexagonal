@@ -111,7 +111,7 @@ Instalar os softwares abaixo:
 
 #### Configurando o IntelliJ e Mongodb
 
-##### Criar o container do Mongodb
+##### Configurando o Mongodb
 
 ```sh
   $ docker pull mongo
@@ -119,48 +119,25 @@ Instalar os softwares abaixo:
   $ docker exec -it mongodb bash                                    #Entrar no banco
 ```
 
-##### Apontar para o Java do GraalVM
-
-![img.png](backend/.github/img.png)
-
-##### Alterar o application.properties
+##### Verificar o application.properties
 
 ![img.png](backend/.github/img_4.png)
 
-##### Iniciar a aplicação
+##### Como iniciar o projeto
 
-![img_1.png](backend/.github/img_1.png)
-
-##### Utilizei o Maven 3.6.3 para executar todos os comandos
-
-![img_3.png](backend/.github/img_3.png)
-
-##### Gerar a imagem compilada pelo Graal VM, fica muito mais rápido o start do servidor
-
-![img_2.png](backend/.github/img_2.png)
-
-<br>
-
-## Como iniciar o projeto
-
-```
-cd backend
-./mvnw compile quarkus:dev
+```sh
+$ cd backend
+$ ./mvnw compile quarkus:dev
 ```
 
-## Configurando o Mongodb
+![img.png](backend/.github/img.png)<br>
+![img_1.png](backend/.github/img_1.png)<br>
 
-```
-docker pull mongo
-docker run -d -p 27017-27019:27017-27019 --name mongodb mongo <- Criar o banco
-docker exec -it mongodb bash <- (Entrar no banco)
-```
-
-### Verifique se a criou corretamente o cantainer
+##### Verifique se a criou corretamente o cantainer
 
 ![img_5.png](backend/.github/img_5.png)<br/>
 
-### Testando o Mongo database
+##### Testando o Mongo database
 
 ```
 Instalar o Mongo Compass no site abaixo:

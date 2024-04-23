@@ -53,7 +53,11 @@ public class WishlistController {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public void addWishlist(Wishlist wishlist) throws Exception {
-        LOGGER.info("Wishlist adicionado:" + wishlist.getProductName());
+        var message = String.format(
+                "Wishlist adicionado: cutomerId: %s and productId: %s",
+                wishlist.getCustomerId(), wishlist.getProductId()
+        );
+        LOGGER.info(message);
 
         wishlistService.addWishlist(wishlist);
     }

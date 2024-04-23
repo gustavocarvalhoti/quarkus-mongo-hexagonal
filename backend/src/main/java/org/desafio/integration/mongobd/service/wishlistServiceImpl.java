@@ -32,12 +32,17 @@ public class wishlistServiceImpl implements WishlistService {
 
     @Override
     public void addWishlist(Wishlist wishlist) throws Exception {
-        // Verificando se o customer possui menos de 20 itens na Wishlist
-        var result = wishlistRepository.getByCustomerAndProduct(wishlist.getCustomerId(), null);
-        if (Objects.isNull(result) || result.size() < 20) {
-            wishlistRepository.addWishlist(wishlist);
+        // Verificando se já existe antes de salvar
+        var result = wishlistRepository.getByCustomerAndProduct(wishlist.getCustomerId(), wishlist.getProductId());
+        if (Objects.isNull(result) || result.isEmpty()) {
+            // Verificando se o customer possui menos de 20 itens na Wishlist
+            result = wishlistRepository.getByCustomerAndProduct(wishlist.getCustomerId(), null);
+            if (Objects.isNull(result) || result.size() < 20) {
+                wishlistRepository.addWishlist(wishlist);
+            } else {
+                throw new Exception("O limite máximo para a lista de desejos é 20.");
+            }
         }
-        throw new Exception("O limite máximo para a lista de desejos é 20.");
     }
 
     @Override
