@@ -63,7 +63,6 @@ A colection está disponível nas pasta: src/main/resources/local/collection-Ins
 - **[Arquitetura Hexagonal](https://engsoftmoderna.info/artigos/arquitetura-hexagonal.html)**
 - **[Maven](https://maven.apache.org/)**
 - **[Docker](https://www.docker.com/)**
-- **[Docker Compose](https://docs.docker.com/compose/install/)**
 - **[Mongodb](https://www.mongodb.com/)**
 - **[Quarkus Resteasy](https://quarkus.io/)**
 - **[Quarkus Junit5 e Mokito](https://quarkus.io/)**
@@ -89,7 +88,6 @@ Instalar os softwares abaixo:
 - **[Git](https://git-scm.com/)**
 - **[Maven](https://maven.apache.org/)**
 - **[Docker](https://www.docker.com/)**
-- **[Docker Compose](https://docs.docker.com/compose/install/)**
 - **[GraalVM](https://www.graalvm.org/) (Somente no modo desenvolvedor)**
 
 <br>
